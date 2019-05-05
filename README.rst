@@ -13,7 +13,7 @@ Krotov Python Package
 .. image:: https://img.shields.io/travis/goerz/krotov.svg
    :alt: Travis Continuous Integration
    :target: https://travis-ci.org/goerz/krotov
-.. image:: https://ci.appveyor.com/api/projects/status/1cbm24w04jmxjpjh?svg=true
+.. image:: https://ci.appveyor.com/api/projects/status/7pgf39yp7pwy1n8l?svg=true
    :alt: AppVeyor Continuous Integration
    :target: https://ci.appveyor.com/project/goerz/krotov
 .. image:: https://img.shields.io/coveralls/github/goerz/krotov/master.svg
