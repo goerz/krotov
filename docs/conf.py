@@ -19,7 +19,10 @@ sys.path.insert(0, os.path.abspath('_extensions'))
 
 # -- Generate API documentation ------------------------------------------------
 def run_apidoc(app):
-    """Generage API documentation"""
+    """Generate API documentation
+
+    The current working directory must be the project root
+    """
     import better_apidoc
 
     better_apidoc.APP = app
@@ -27,24 +30,25 @@ def run_apidoc(app):
         [
             'better-apidoc',
             '-t',
-            os.path.join('.', '_templates'),
+            os.path.join('docs', '_templates'),
             '--force',
             '--no-toc',
             '--separate',
             '-o',
-            os.path.join('.', 'API'),
-            os.path.join('..', 'src', 'krotov'),
+            os.path.join('docs', 'API'),
+            os.path.join('src', 'krotov'),
         ]
     )
 
 
 # -- Generate patched README documentation ------------------------------------
 def generate_patched_readme(_):
-    if not os.path.isfile('./_README.rst'):
-        shutil.copyfile(os.path.join('..', 'README.rst'), '_README.rst')
-        cmd = ['patch', '_README.rst', './_README.patch']
+    # The current working directory must be the project root
+    if not os.path.isfile('docs/_README.rst'):
+        shutil.copyfile(os.path.join('README.rst'), 'docs/_README.rst')
+        cmd = ['patch', 'docs/_README.rst', 'docs/_README.patch']
         subprocess.run(cmd, check=True)
-    assert os.path.isfile('./_README.rst')
+    assert os.path.isfile('docs/_README.rst')
 
 
 # -- General configuration -----------------------------------------------------
