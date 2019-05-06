@@ -15,7 +15,7 @@ Krotov Python Package
    :target: https://travis-ci.org/goerz/krotov
 .. image:: https://ci.appveyor.com/api/projects/status/7pgf39yp7pwy1n8l?svg=true
    :alt: AppVeyor Continuous Integration
-   :target: https://ci.appveyor.com/project/goerz/krotov
+   :target: https://ci.appveyor.com/project/goerz/krotov-jqfih
 .. image:: https://img.shields.io/coveralls/github/goerz/krotov/master.svg
    :alt: Coveralls
    :target: https://coveralls.io/github/goerz/krotov?branch=master
