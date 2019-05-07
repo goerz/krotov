@@ -3,7 +3,7 @@
 TESTENV = MATPLOTLIBRC=tests
 TESTOPTIONS = --doctest-modules --cov=krotov --nbval --sanitize-with docs/nbval_sanitize.cfg --durations=10 -x -s
 TESTS = src tests docs/notebooks/*.ipynb README.rst docs/*.rst
-TOXOPTIONS = -v
+TOXOPTIONS = -vv
 
 
 define PRINT_HELP_PYSCRIPT
