@@ -20,6 +20,6 @@ install:
   - conda config --set always_yes yes --set changeps1 no
   - pip freeze
 script:
-  - tox
+  - tox -vv
 after_success:
   - coveralls

@@ -1,19 +1,24 @@
 environment:
 
   matrix:
-    - PYTHON_VERSION: 3.5
+    - PYTHON: "C:\\Python35"
+      PYTHON_VERSION: 3.5
       TOXENV: py35-test
-    - PYTHON_VERSION: 3.6
+    - PYTHON: "C:\\Python36"
+      PYTHON_VERSION: 3.6
       TOXENV: py36-test
-    - PYTHON_VERSION: 3.7
+    - PYTHON: "C:\\Python37"
+      PYTHON_VERSION: 3.7
       TOXENV: py37-test
 
 install:
-  - pip install tox
-  - pip install coveralls
-  - pip freeze
+  - "%PYTHON%\\python.exe -V"
+  - "%PYTHON%\\python.exe -m pip install tox"
+  - "%PYTHON%\\python.exe -m pip install coveralls"
+  - "%PYTHON%\\python.exe -m pip freeze"
+  - C:\Miniconda3\\Scripts\\activate"
 
 build: off
 
 test_script:
-  - tox -e %TOXENV% -- src tests README.rst docs\notebooks\01_example_simple_state_to_state.ipynb docs\notebooks\02_example_lambda_system_rwa_complex_pulse.ipynb docs\notebooks\03_example_lambda_system_rwa_non_hermitian.ipynb
+  - "%PYTHON%\\python.exe -m tox -vv -e %TOXENV% -- src tests README.rst docs\notebooks\01_example_simple_state_to_state.ipynb docs\notebooks\02_example_lambda_system_rwa_complex_pulse.ipynb docs\notebooks\03_example_lambda_system_rwa_non_hermitian.ipynb"
